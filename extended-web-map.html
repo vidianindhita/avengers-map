@@ -1,0 +1,70 @@
+<!--  A basic web map. -->
+<!-- Leaflet Guide: http://leafletjs.com/examples/quick-start/ -->
+<!-- Carto Base maps: http://bl.ocks.org/Xatpy/raw/854297419bd7eb3421d0/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Avengers Map </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+   crossorigin=""></script>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="map"> </div>
+    <script>
+    var map = L.map('map').setView([35.661479, -42.317510], 3); // (center coordinates, zoom level)
+    
+    var OpenStreetMap_HOT = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmlkaWFuaW5kaGl0YSIsImEiOiJjamY3bmt6cnIyYnloMzNwZHZkaHBza2FnIn0.THRLsGN25R47_kIIcz7YGA', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.comic',
+        accessToken: 'your.mapbox.access.token'
+    }).addTo(map);
+
+	var avengersIcon = L.Icon.extend({
+	    options: {
+	        iconSize:     [70, 70],
+	        iconAnchor:   [22, 94],
+	        popupAnchor:  [13, -86]
+	    }
+	});
+
+	var blackPantherIcon = new avengersIcon({iconUrl: 'assets/black-panther.png'});
+	var blackWidowIcon = new avengersIcon({iconUrl: 'assets/black-widow.png'});
+	var captainAmericaIcon = new avengersIcon({iconUrl: 'assets/captain-america.png'});
+	var captainMarvelIcon = new avengersIcon({iconUrl: 'assets/captain-marvel.png'});
+	var falconIcon = new avengersIcon({iconUrl: 'assets/falcon.png'});
+	var hankPymIcon = new avengersIcon({iconUrl: 'assets/hank-pym.png'});
+	var hulkIcon = new avengersIcon({iconUrl: 'assets/hulk.png'});
+	var ironManIcon = new avengersIcon({iconUrl: 'assets/iron-man.png'});
+	var lukeCageIcon = new avengersIcon({iconUrl: 'assets/luke-cage.png'});
+	var thorIcon = new avengersIcon({iconUrl: 'assets/thor.png'});
+	var visionIcon = new avengersIcon({iconUrl: 'assets/vision.png'});
+	var waspIcon = new avengersIcon({iconUrl: 'assets/wasp.png'});
+	var wonderManIcon = new avengersIcon({iconUrl: 'assets/wonder-man.png'});
+
+    var marker = L.marker([40.72942, -73.99589], {icon: blackPantherIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([-4.477535, -67.840048], {icon: blackWidowIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([34.036095, -118.295045], {icon: captainAmericaIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([59.917401, 42.716690], {icon: captainMarvelIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([36.422271, 42.869956], {icon: falconIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([33.754466, 1.176802], {icon: hankPymIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([20.853644, -11.882391], {icon: hulkIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([62.683942, -45.510817], {icon: ironManIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([53.263445, 10.419206], {icon: lukeCageIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([50.136277, 36.815292], {icon: thorIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([59.565558, -122.469682], {icon: visionIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([66.051737, -87.503334], {icon: waspIcon}).addTo(map).bindPopup("Yo!");
+    var marker = L.marker([12.947953, 19.503910], {icon: wonderManIcon}).addTo(map).bindPopup("Yo!");
+
+    </script>
+</body>
+
+</html>

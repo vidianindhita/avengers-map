@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #10496a;
+}
+
+html, #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.h1, h1 {
+    font-size: 75px;
+    color: #fff8f0;
+    font-family: 'Bangers';
+}
+
+#txt {
+    font-size: 200px;
+    color: #fff8f0;
+    font-family: 'Bangers';
+}
+
+.btn-custom {
+    background-color: #902929;
+    border-color: #902929;
+    color: #fff8f0;
+    font-size: 100px;
+    width: 500px;
+    font-family: 'Bangers';
+}
+
+.btn-custom:hover {
+    background-color: #a94040;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: #902929;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #fff8f0;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    color: #fff8f0;
+}
